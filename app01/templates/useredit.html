@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container">
+        <form  method="post" novalidate>
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label }}:{{ field }}
+                    <span style="color:red">{{ field.errors.0 }}</span>
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">提交</button>
+        </form>
+    </div>
+{% endblock %}

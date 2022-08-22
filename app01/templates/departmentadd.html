@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1-dist/css/bootstrap.css' %} ">
+</head>
+<body>
+<div class="container">
+    <form method="post" action="/department/add/">
+        {% csrf_token %}
+        <span>
+            <input type="text" placeholder="部门ID" name="id">
+        </span>
+        <span>
+            <input type="text" placeholder="部门名称" name="title">
+        </span>
+        <div>
+            <input type="submit" value="提交">
+        </div>
+    </form>
+    <div> {{ errormsg }}</div>
+</div>
+
+<script src="{% static 'js/jquery-3.6.0.js' %}"></script>
+<script src="{% static 'plugins/bootstrap-3.4.1-dist/js/bootstrap.js'%}"></script>
+</body>
+</html>
